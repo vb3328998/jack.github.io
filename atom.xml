@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Jack Blog</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Jack</name>
     
   </author>
   
@@ -18,17 +18,18 @@
   
   <entry>
     <title>开发mutating webhook(修改statefulset的nodeselector)</title>
-    <link href="http://example.com/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/"/>
-    <id>http://example.com/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/</id>
+    <link href="http://example.com/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/"/>
+    <id>http://example.com/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/</id>
     <published>2024-04-09T07:08:36.000Z</published>
     <updated>2024-04-09T07:19:13.500Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="何为-Admission-Webhook"><a href="#何为-Admission-Webhook" class="headerlink" title="何为 Admission Webhook"></a>何为 Admission Webhook</h2><p>官网定义：<br>Admission webhook 是一种用于接收准入请求并对其进行处理的 HTTP 回调机制。可以定义两种类型的 admission webhook，即 validating admission webhook 和 mutating admission webhook。Mutating admission webhook 会先被调用。它们可以更改发送到 API 服务器的对象以执行自定义的设置默认值操作。</p><p><img src="/images/webhook-img.png" alt="webhook img"></p>]]></content>
-    
     
       
       
-    <summary type="html">&lt;h2 id=&quot;何为-Admission-Webhook&quot;&gt;&lt;a href=&quot;#何为-Admission-Webhook&quot; class=&quot;headerlink&quot; title=&quot;何为 Admission Webhook&quot;&gt;&lt;/a&gt;何为 Admission Webhook&lt;/h2&gt;&lt;</summary>
+        
+        
+    <summary type="html">&lt;h2 id=&quot;何为-Admission-Webhook&quot;&gt;&lt;a href=&quot;#何为-Admission-Webhook&quot; class=&quot;headerlink&quot; title=&quot;何为 Admission Webhook&quot;&gt;&lt;/a&gt;何为 Admission</summary>
+        
       
     
     
@@ -45,12 +46,13 @@
     <published>2024-04-09T06:44:09.411Z</published>
     <updated>2024-04-09T07:20:33.537Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]></content>
-    
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
       
     
     
