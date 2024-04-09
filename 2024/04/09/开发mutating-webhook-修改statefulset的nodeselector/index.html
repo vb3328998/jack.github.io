@@ -4,15 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2024 | Hexo</title>
+  <title>开发mutating webhook(修改statefulset的nodeselector) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+  <meta name="description" content="何为 Admission Webhook官网定义：Admission webhook 是一种用于接收准入请求并对其进行处理的 HTTP 回调机制。可以定义两种类型的 admission webhook，即 validating admission webhook 和 mutating admission webhook。Mutating admission webhook 会先被调用。它们可以更改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发mutating webhook(修改statefulset的nodeselector)">
+<meta property="og:url" content="http://example.com/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="何为 Admission Webhook官网定义：Admission webhook 是一种用于接收准入请求并对其进行处理的 HTTP 回调机制。可以定义两种类型的 admission webhook，即 validating admission webhook 和 mutating admission webhook。Mutating admission webhook 会先被调用。它们可以更改">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/webhook-img.png">
+<meta property="article:published_time" content="2024-04-09T07:08:36.000Z">
+<meta property="article:modified_time" content="2024-04-09T07:19:13.500Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="mutating webhook">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/webhook-img.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,58 +74,56 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-04-09T07:08:36.000Z" itemprop="datePublished">Apr 9</time>
+        <section id="main"><article id="post-开发mutating-webhook-修改statefulset的nodeselector" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/" class="article-date">
+  <time class="dt-published" datetime="2024-04-09T07:08:36.000Z" itemprop="datePublished">2024-04-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/">开发mutating webhook(修改statefulset的nodeselector)</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      开发mutating webhook(修改statefulset的nodeselector)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/04/09/hello-world/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-04-09T06:44:09.411Z" itemprop="datePublished">Apr 9</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/04/09/hello-world/">Hello World</a>
-    </h1>
-  
+        <h2 id="何为-Admission-Webhook"><a href="#何为-Admission-Webhook" class="headerlink" title="何为 Admission Webhook"></a>何为 Admission Webhook</h2><p>官网定义：<br>Admission webhook 是一种用于接收准入请求并对其进行处理的 HTTP 回调机制。可以定义两种类型的 admission webhook，即 validating admission webhook 和 mutating admission webhook。Mutating admission webhook 会先被调用。它们可以更改发送到 API 服务器的对象以执行自定义的设置默认值操作。</p>
+<p><img src="/images/webhook-img.png" alt="webhook img"></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/04/09/%E5%BC%80%E5%8F%91mutating-webhook-%E4%BF%AE%E6%94%B9statefulset%E7%9A%84nodeselector/" data-id="clus1yzhj0000h3h85seq2ygz" data-title="开发mutating webhook(修改statefulset的nodeselector)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mutating-webhook/" rel="tag">mutating webhook</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/04/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
