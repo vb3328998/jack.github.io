@@ -444,24 +444,24 @@
 	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解析 json，我们这里的 annotations 是 <strong>custom-node-selector: ‘{“key”: “name”, “even”: “node1”, “odd”: “node2”}’</strong><br>所以这段代码最后输出会是 name node1 或者 name node2，即是我们想要用来新增或修改的 Pod 的 nodeSelector</p>
-<pre class="line-numbers language-none"><code class="language-none">func getNodeSelectorValue(pod *corev1.Pod, index int) (string, string, error) {
-	selectorJSON, ok := pod.Annotations["custom-node-selector"]
-	if !ok {
-		return "", "", fmt.Errorf("注解 %s 不存在", "custom-node-selector")
-	}
-	log.Debugf("selectorJSON: %s", selectorJSON) // 打印查看实际的 JSON 字符串
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">getNodeSelectorValue</span><span class="token punctuation">(</span>pod <span class="token operator">*</span>corev1<span class="token punctuation">.</span>Pod<span class="token punctuation">,</span> index <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	selectorJSON<span class="token punctuation">,</span> ok <span class="token operator">:=</span> pod<span class="token punctuation">.</span>Annotations<span class="token punctuation">[</span><span class="token string">"custom-node-selector"</span><span class="token punctuation">]</span>
+	<span class="token keyword">if</span> <span class="token operator">!</span>ok <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"注解 %s 不存在"</span><span class="token punctuation">,</span> <span class="token string">"custom-node-selector"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	log<span class="token punctuation">.</span><span class="token function">Debugf</span><span class="token punctuation">(</span><span class="token string">"selectorJSON: %s"</span><span class="token punctuation">,</span> selectorJSON<span class="token punctuation">)</span> <span class="token comment">// 打印查看实际的 JSON 字符串</span>
 
-	var customSelector CustomNodeSelector
-	err := json.Unmarshal([]byte(selectorJSON), &amp;customSelector)
-	if err != nil {
-		return "", "", fmt.Errorf("解析自定义 nodeSelector 注解失败: %v", err)
-	}
+	<span class="token keyword">var</span> customSelector CustomNodeSelector
+	err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>selectorJSON<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>customSelector<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"解析自定义 nodeSelector 注解失败: %v"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
 
-	if index%2 == 0 {
-		return customSelector.Key, customSelector.Even, nil
-	}
-	return customSelector.Key, customSelector.Odd, nil
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token keyword">if</span> index<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> customSelector<span class="token punctuation">.</span>Key<span class="token punctuation">,</span> customSelector<span class="token punctuation">.</span>Even<span class="token punctuation">,</span> <span class="token boolean">nil</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> customSelector<span class="token punctuation">.</span>Key<span class="token punctuation">,</span> customSelector<span class="token punctuation">.</span>Odd<span class="token punctuation">,</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>完整代码</strong><br>包含 具体逻辑实现， 钉钉通知</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
