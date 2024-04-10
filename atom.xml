@@ -3,11 +3,11 @@
   <title>Jack Blog</title>
   
   
-  <link href="https://vb3328998.github.io/about/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://vb3328998.github.io/about/"/>
+  <link href="http://example.com/"/>
   <updated>2024-04-10T01:39:32.569Z</updated>
-  <id>https://vb3328998.github.io/about/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>Jack</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>开发mutating webhook(修改statefulset的nodeselector)</title>
-    <link href="https://vb3328998.github.io/about/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/"/>
-    <id>https://vb3328998.github.io/about/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/</id>
+    <link href="http://example.com/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/"/>
+    <id>http://example.com/2024/04/09/kai-fa-mutating-webhook-xiu-gai-statefulset-de-nodeselector/</id>
     <published>2024-04-09T07:08:36.000Z</published>
     <updated>2024-04-10T01:39:32.569Z</updated>
     
@@ -35,14 +35,14 @@
     
     
     
-    <category term="mutating webhook" scheme="https://vb3328998.github.io/about/tags/mutating-webhook/"/>
+    <category term="mutating webhook" scheme="http://example.com/tags/mutating-webhook/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://vb3328998.github.io/about/2024/04/09/hello-world/"/>
-    <id>https://vb3328998.github.io/about/2024/04/09/hello-world/</id>
+    <link href="http://example.com/2024/04/09/hello-world/"/>
+    <id>http://example.com/2024/04/09/hello-world/</id>
     <published>2024-04-09T06:44:09.411Z</published>
     <updated>2024-04-09T07:20:33.537Z</updated>
     
