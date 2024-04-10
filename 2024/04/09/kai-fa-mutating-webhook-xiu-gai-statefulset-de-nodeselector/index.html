@@ -407,7 +407,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="何为-Admission-Webhook"><a href="#何为-Admission-Webhook" class="headerlink" title="何为 Admission Webhook"></a>何为 Admission Webhook</h2><p><strong>官网定义</strong><br>Admission webhook 是一种用于接收准入请求并对其进行处理的 HTTP 回调机制。可以定义两种类型的 admission webhook，即 validating admission webhook 和 mutating admission webhook。Mutating admission webhook 会先被调用。它们可以更改发送到 API 服务器的对象以执行自定义的设置默认值操作。</p>
-<p><img src="/images/webhook-img.png" alt="webhook img"></p>
+<p><img src="/about/images/webhook-img.png"></p>
 <p>接下来，本文将采用 Kubernetes 提供的 Mutating Admission Webhook 这一机制，来实现 statufulset 中修改或者新增 Pod NodeSelector 的，我们每次发送请求调用 API 创建 Pod 的时候，Pod 的 spec 信息会被先修改，再存储。如此一来，工作节点上的 Kublet 创建 Pod 的时候，将会预置NodeSelector。</p>
 <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>将 statufulset 中 索引是单数的 Pod 设置 NodeSelector 标签，标签的 key 为 "name"，value 为 "even"。双数的 Pod 设置 NodeSelector 标签，标签的 key 为 "name"，value 为 "odd"。 custom-node-selector: '{"key": "name", "even": "node1", "odd": "node2"}'</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>不能影响到其他的服务，所以需要通过 Mutating Admission Webhook 机制，在创建 Pod 之前，通过 Pod 的 annotations 或者 labels 去判断是否经过 Mutating Admission Webhook，我们这里用 labels 去过滤是否启用 mutating 规则。 当 Pod 的 labels 中有 <strong>"ab-build-different: 'true'"</strong> 的时候才去执行</p>
