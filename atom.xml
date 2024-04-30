@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-10T02:40:02.525Z</updated>
+  <updated>2024-04-30T01:51:55.332Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次奇葩的TIDB迁移</title>
+    <link href="http://example.com/2024/04/29/ji-yi-ci-qi-pa-de-tidb-qian-yi/"/>
+    <id>http://example.com/2024/04/29/ji-yi-ci-qi-pa-de-tidb-qian-yi/</id>
+    <published>2024-04-29T07:08:36.000Z</published>
+    <updated>2024-04-30T01:51:55.332Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;TIDB-官网文档&quot;&gt;&lt;a href=&quot;#TIDB-官网文档&quot; class=&quot;headerlink&quot; title=&quot;TIDB 官网文档&quot;&gt;&lt;/a&gt;TIDB 官网文档&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="TIDB" scheme="http://example.com/tags/TIDB/"/>
+    
+    <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
+    
+    <category term="TIDB-lightning" scheme="http://example.com/tags/TIDB-lightning/"/>
+    
+    <category term="TICDC" scheme="http://example.com/tags/TICDC/"/>
+    
+  </entry>
   
   <entry>
     <title>开发mutating webhook(修改statefulset的nodeselector)</title>
